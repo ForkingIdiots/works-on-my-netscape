@@ -29,6 +29,6 @@
     "vite-plugin-dts": "^4.2.4"
   },
   "dependencies": {
-    "@forkingidiots/ui-larious": "^0.0.2"
+    "@forkingidiots/ui-larious": "^1.1.0"
   }
 }
