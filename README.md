@@ -1,9 +1,5 @@
-# 🤪 Codey Wibble-Wobble
+<p align="center">
+<img src="./public/netscape-logo.svg" width="150px">
+</p>
 
-Bork floof computer
-Spaghetti brain dance numbers
-Clicky-clack bananapants
-
-Confuse digitals
-Head hurt good, hooman silly
-Happy typing brrr
+### Because Dial-Up Wasn't Slow Enough!
