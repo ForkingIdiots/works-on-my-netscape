@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "target": "ES2021",
+    "useDefineForClassFields": true,
+    "lib": [
+      "ES2021",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "outDir": "./dist",
+    "paths": {
+      "@/*": [
+        "./lib/*"
+      ]
+    },
+    // "paths": {
+    //   "@radix-ui/*": [
+    //     "node_modules/@radix-ui/*"
+    //   ]
+    // },
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src",
+    "lib"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
