@@ -26,11 +26,9 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
-        with:
           cache: pnpm
           node-version: ${{ env.NODE_VERSION }}
 
       - run: pnpm install --frozen-lockfile
-      
+
       - run: pnpm build
