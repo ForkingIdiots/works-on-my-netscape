@@ -26,7 +26,8 @@ jobs:
       - name: Create npmrc
         run: |
           echo @forkingidiots:registry=https://npm.pkg.github.com/ > .npmrc
-          echo //npm.pkg.github.com/:_authToken=${{ secrets.YOLO }} >> .npmrc
+          echo always-auth=true >> .npmrc
+          echo //npm.pkg.github.com/:_authToken=${{ secrets.SCOPED_YOLO }} >> .npmrc
       - uses: actions/setup-node@v4
         with:
           cache: pnpm
@@ -34,6 +35,6 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.YOLO }}
+          NODE_AUTH_TOKEN: ${{ secrets.SCOPED_YOLO }}
 
       - run: pnpm build
