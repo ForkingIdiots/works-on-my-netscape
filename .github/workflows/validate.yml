@@ -1,0 +1,36 @@
+name: validate
+
+env:
+  NODE_VERSION: 21.7.3
+  PNPM_VERSION: 9.12.1
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: bash
+        run: |
+          echo "Cleaning workspace directory..."
+          sudo rm -rfv ${{ github.workspace }}
+          mkdir -p ${{ github.workspace }}
+
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+        with:
+          cache: pnpm
+          node-version: ${{ env.NODE_VERSION }}
+
+      - run: pnpm install --frozen-lockfile
+      
+      - run: pnpm build
